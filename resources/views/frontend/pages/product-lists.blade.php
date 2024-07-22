@@ -262,7 +262,7 @@
 														@endphp
 														@foreach($photo as $data)
 															<div class="single-slider">
-																<img src="{{$data}}" alt="{{$data}}">
+																<img src="{{asset($data)}}" alt="{{asset($data)}}">
 															</div>
 														@endforeach
 													</div>
