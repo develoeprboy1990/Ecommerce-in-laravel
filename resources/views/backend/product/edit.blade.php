@@ -166,7 +166,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
 
 <script>
-    $('#lfm').filemanager('image');
+   // $('#lfm').filemanager('image');
+
+    $('#lfm').filemanager('image', {prefix: '/projects/Ecommerce-in-laravel/public/laravel-filemanager'});
 
     $(document).ready(function() {
     $('#summary').summernote({
