@@ -80,10 +80,11 @@
 <link rel="stylesheet" href="{{asset('backend/summernote/summernote.min.css')}}">
 @endpush
 @push('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 <script src="{{asset('backend/summernote/summernote.min.js')}}"></script>
 <script>
-    $('#lfm').filemanager('image');
+    var route_prefix = "{{ asset('laravel-filemanager') }}";
+    $('#lfm').filemanager('image', {prefix: route_prefix});
 
     $(document).ready(function() {
       $('#summary').summernote({
