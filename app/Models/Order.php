@@ -21,15 +21,15 @@ class Order extends Model
         return 0;
     }
     public function cart(){
-        return $this->hasMany(Cart::class);
+        return $this->hasMany(Cart::class)->withDefault();
     }
 
     public function shipping(){
-        return $this->belongsTo(Shipping::class,'shipping_id');
+        return $this->belongsTo(Shipping::class,'shipping_id')->withDefault();
     }
     public function user()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        return $this->belongsTo('App\User', 'user_id')->withDefault();
     }
 
 }
