@@ -126,8 +126,9 @@
   </style> 
 
 @push('scripts')
-<script src="/vendor/laravel-filemanager/js/stand-alone-button.js"></script>
+<script src="{{ asset('vendor/laravel-filemanager/js/stand-alone-button.js') }}"></script>
 <script>
-    $('#lfm').filemanager('image');
+    var route_prefix = "{{ asset('laravel-filemanager') }}";
+    $('#lfm').filemanager('image', {prefix: route_prefix});
 </script>
 @endpush
