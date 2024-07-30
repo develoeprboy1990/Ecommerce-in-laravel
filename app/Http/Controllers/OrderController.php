@@ -8,6 +8,8 @@ use App\Models\Order;
 use App\Models\Shipping;
 use App\User;
 use PDF;
+
+use I18N_Arabic;
 use Notification;
 use Helper;
 use Illuminate\Support\Str;
@@ -270,14 +272,41 @@ class OrderController extends Controller
     }
 
     // PDF generate
-    public function pdf(Request $request){
+    public function pdf1(Request $request){
         $order=Order::getAllOrder($request->id);
         // return $order;
         $file_name=$order->order_number.'-'.$order->first_name.'.pdf';
         // return $file_name;
-        $pdf=PDF::loadview('backend.order.pdf',compact('order'));
+        $html = view('backend.order.pdftest',compact('order'))->toArabicHTML();
+
+$pdf = PDF::loadHTML($html)->output();
+
+$headers = array(
+    "Content-type" => "application/pdf",
+);
+
+// Create a stream response as a file download
+return response()->streamDownload(
+    fn () => print($pdf), // add the content to the stream
+    "invoice.pdf", // the name of the file/stream
+    $headers
+);
+
+
+        //$pdf=PDF::loadview('backend.order.pdftest',compact('order'));
+         return $pdf->stream();
         return $pdf->download($file_name);
     }
+
+     public function pdf(Request $request){
+           $order = Order::getAllOrder($request->id);
+    $file_name = $order->order_number . '-' . $order->first_name . '.pdf';
+    //return view('backend.order.pdftest');
+    $pdf = PDF::loadView('backend.order.pdftest', ['order' => $order]);
+    Pdf::setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+    return $pdf->download($file_name);
+    }
+
     // Income chart
     public function incomeChart(Request $request){
         $year=\Carbon\Carbon::now()->year;
