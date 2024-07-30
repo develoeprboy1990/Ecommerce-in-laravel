@@ -303,7 +303,7 @@ return response()->streamDownload(
     $file_name = $order->order_number . '-' . $order->first_name . '.pdf';
     //return view('backend.order.pdftest');
     $pdf = PDF::loadView('backend.order.pdftest', ['order' => $order]);
-    Pdf::setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
+    //Pdf::setOption(['dpi' => 150, 'defaultFont' => 'sans-serif']);
     return $pdf->download($file_name);
     }
 

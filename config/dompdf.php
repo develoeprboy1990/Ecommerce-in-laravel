@@ -6,8 +6,8 @@ return [
     'convert_entities' => true,
 
     'options' => [
-        'font_dir' => 'http://localhost:8085/ahsan/Ecommerce-in-laravel/public/fonts',
-        'font_cache' => 'http://localhost:8085/ahsan/Ecommerce-in-laravel/public/fonts',
+        'font_dir' => 'https://www.lpaircon.co.uk/projects/Ecommerce-in-laravel/public/fonts/',
+        'font_cache' => 'https://www.lpaircon.co.uk/projects/Ecommerce-in-laravel/public/fonts/',
         'temp_dir' => storage_path('app/tmp'),
         'chroot' => realpath(base_path()),
 

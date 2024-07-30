@@ -33,13 +33,13 @@
     <style>
         @font-face {
             font-family: 'Noto Kufi Arabic';
-            src: url('http://localhost:8085/ahsan/Ecommerce-in-laravel/public/fonts/NotoKufiArabic-Regular.ttf') format('truetype');
+            src: url('https://www.lpaircon.co.uk/projects/Ecommerce-in-laravel/public/fonts/NotoKufiArabic-Regular.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
         }
         @font-face {
             font-family: 'Noto Kufi Arabic';
-            src: url('http://localhost:8085/ahsan/Ecommerce-in-laravel/public/NotoKufiArabic-Bold.ttf') format('truetype');
+            src: url('https://www.lpaircon.co.uk/projects/Ecommerce-in-laravel/public/NotoKufiArabic-Bold.ttf') format('truetype');
             font-weight: bold;
             font-style: normal;
         }
